@@ -5,6 +5,8 @@
 //  Created by Jmorgaz on 17/3/21.
 //
 
+// swiftlint:disable overridden_super_call
+
 import XCTest
 @testable import TakeHome
 

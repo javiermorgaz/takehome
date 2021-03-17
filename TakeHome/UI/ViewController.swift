@@ -18,4 +18,3 @@ class ViewController: UIViewController {
         self.view.addSubview(label)
     }
 }
-
