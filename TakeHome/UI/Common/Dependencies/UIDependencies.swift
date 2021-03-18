@@ -41,7 +41,6 @@ extension UIDependencies {
             return self
         }
 
-        
         func with(map: MapDependencies) -> Builder {
             self.map = map
             return self
