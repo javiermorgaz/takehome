@@ -21,6 +21,18 @@
 		1E6EF9A126032863002F700A /* GetPoisUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9A026032863002F700A /* GetPoisUseCase.swift */; };
 		1E6EF9A72603292B002F700A /* PoisRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9A62603292B002F700A /* PoisRepository.swift */; };
 		1E6EF9AD260329B0002F700A /* PoisAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9AC260329B0002F700A /* PoisAPIClient.swift */; };
+		1E6EF9B826038041002F700A /* CoreDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9B726038041002F700A /* CoreDependencies.swift */; };
+		1E6EF9BD26038176002F700A /* APICoreDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9BC26038176002F700A /* APICoreDependencies.swift */; };
+		1E6EF9C52603821B002F700A /* PoisCoreDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9C42603821B002F700A /* PoisCoreDependencies.swift */; };
+		1E6EF9D4260385DA002F700A /* UIDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9D3260385DA002F700A /* UIDependencies.swift */; };
+		1E6EF9E92603A553002F700A /* ListDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9E82603A553002F700A /* ListDependencies.swift */; };
+		1E6EF9F72603A5ED002F700A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9F62603A5ED002F700A /* BaseViewController.swift */; };
+		1E6EF9FD2603A685002F700A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9FC2603A685002F700A /* Extensions.swift */; };
+		1E6EFA052603A70F002F700A /* MapDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFA042603A70F002F700A /* MapDependencies.swift */; };
+		1E6EFA0A2603A7EC002F700A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFA092603A7EC002F700A /* ListViewController.swift */; };
+		1E6EFA152603A811002F700A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFA142603A811002F700A /* MapViewController.swift */; };
+		1E6EFA1D2603A8E8002F700A /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFA1C2603A8E8002F700A /* ListPresenter.swift */; };
+		1E6EFA222603A923002F700A /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFA212603A923002F700A /* MapPresenter.swift */; };
 		4F64796E566D05B5E27B5BF2 /* Pods_TakeHome_TakeHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C77AA20772996228285346 /* Pods_TakeHome_TakeHomeUITests.framework */; };
 		A2F770DBE47A8FA5A028CABA /* Pods_TakeHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AF187C469A81775179A399 /* Pods_TakeHome.framework */; };
 		FDBCF8207CAF74C53D09B842 /* Pods_TakeHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B885242F22C6BCEE1DB913 /* Pods_TakeHomeTests.framework */; };
@@ -65,6 +77,18 @@
 		1E6EF9A026032863002F700A /* GetPoisUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPoisUseCase.swift; sourceTree = "<group>"; };
 		1E6EF9A62603292B002F700A /* PoisRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisRepository.swift; sourceTree = "<group>"; };
 		1E6EF9AC260329B0002F700A /* PoisAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisAPIClient.swift; sourceTree = "<group>"; };
+		1E6EF9B726038041002F700A /* CoreDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDependencies.swift; sourceTree = "<group>"; };
+		1E6EF9BC26038176002F700A /* APICoreDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICoreDependencies.swift; sourceTree = "<group>"; };
+		1E6EF9C42603821B002F700A /* PoisCoreDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisCoreDependencies.swift; sourceTree = "<group>"; };
+		1E6EF9D3260385DA002F700A /* UIDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDependencies.swift; sourceTree = "<group>"; };
+		1E6EF9E82603A553002F700A /* ListDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDependencies.swift; sourceTree = "<group>"; };
+		1E6EF9F62603A5ED002F700A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1E6EF9FC2603A685002F700A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1E6EFA042603A70F002F700A /* MapDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDependencies.swift; sourceTree = "<group>"; };
+		1E6EFA092603A7EC002F700A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		1E6EFA142603A811002F700A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1E6EFA1C2603A8E8002F700A /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		1E6EFA212603A923002F700A /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		1FBEC57366626ED9463A755F /* Pods-TakeHome-TakeHomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeHome-TakeHomeUITests.debug.xcconfig"; path = "Target Support Files/Pods-TakeHome-TakeHomeUITests/Pods-TakeHome-TakeHomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		21AF187C469A81775179A399 /* Pods_TakeHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B885242F22C6BCEE1DB913 /* Pods_TakeHomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeHomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +239,9 @@
 		1E6EF96E2601E2E5002F700A /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				1E6EF9B726038041002F700A /* CoreDependencies.swift */,
+				1E6EF9BC26038176002F700A /* APICoreDependencies.swift */,
+				1E6EF9C42603821B002F700A /* PoisCoreDependencies.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -222,6 +249,9 @@
 		1E6EF96F2601E53C002F700A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1E6EF9D2260385BF002F700A /* Common */,
+				1E6EF9DE2603A4DA002F700A /* List */,
+				1E6EF9DF2603A4E6002F700A /* Map */,
 				1E6EF7D52601D4A2002F700A /* ViewController.swift */,
 			);
 			path = UI;
@@ -267,6 +297,92 @@
 				1E6EF9AC260329B0002F700A /* PoisAPIClient.swift */,
 			);
 			path = "Api Clients";
+			sourceTree = "<group>";
+		};
+		1E6EF9D2260385BF002F700A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1E6EF9FB2603A679002F700A /* Extensions */,
+				1E6EF9E32603A515002F700A /* Dependencies */,
+				1E6EF9F02603A5AF002F700A /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1E6EF9DE2603A4DA002F700A /* List */ = {
+			isa = PBXGroup;
+			children = (
+				1E6EF9E42603A522002F700A /* Dependencies */,
+				1E6EF9E62603A534002F700A /* View */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		1E6EF9DF2603A4E6002F700A /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1E6EF9E52603A52D002F700A /* Dependencies */,
+				1E6EF9E72603A539002F700A /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		1E6EF9E32603A515002F700A /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				1E6EF9D3260385DA002F700A /* UIDependencies.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		1E6EF9E42603A522002F700A /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				1E6EF9E82603A553002F700A /* ListDependencies.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		1E6EF9E52603A52D002F700A /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				1E6EFA042603A70F002F700A /* MapDependencies.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		1E6EF9E62603A534002F700A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E6EFA092603A7EC002F700A /* ListViewController.swift */,
+				1E6EFA1C2603A8E8002F700A /* ListPresenter.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E6EF9E72603A539002F700A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E6EFA142603A811002F700A /* MapViewController.swift */,
+				1E6EFA212603A923002F700A /* MapPresenter.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E6EF9F02603A5AF002F700A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E6EF9F62603A5ED002F700A /* BaseViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E6EF9FB2603A679002F700A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1E6EF9FC2603A685002F700A /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B925BC7EAB298622E50BD083 /* Pods */ = {
@@ -538,15 +654,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E6EF98526026867002F700A /* RestClient.swift in Sources */,
+				1E6EF9FD2603A685002F700A /* Extensions.swift in Sources */,
 				1E6EF99C260327AC002F700A /* PoisDTO.swift in Sources */,
+				1E6EFA222603A923002F700A /* MapPresenter.swift in Sources */,
 				1E6EF7D62601D4A2002F700A /* ViewController.swift in Sources */,
+				1E6EF9C52603821B002F700A /* PoisCoreDependencies.swift in Sources */,
 				1E6EF9A126032863002F700A /* GetPoisUseCase.swift in Sources */,
 				1E6EF98D2602688F002F700A /* APIRouter.swift in Sources */,
+				1E6EFA1D2603A8E8002F700A /* ListPresenter.swift in Sources */,
 				1E6EF7D22601D4A2002F700A /* AppDelegate.swift in Sources */,
+				1E6EF9F72603A5ED002F700A /* BaseViewController.swift in Sources */,
 				1E6EF9AD260329B0002F700A /* PoisAPIClient.swift in Sources */,
 				1E6EF7D42601D4A2002F700A /* SceneDelegate.swift in Sources */,
+				1E6EF9B826038041002F700A /* CoreDependencies.swift in Sources */,
+				1E6EF9E92603A553002F700A /* ListDependencies.swift in Sources */,
+				1E6EFA152603A811002F700A /* MapViewController.swift in Sources */,
 				1E6EF9A72603292B002F700A /* PoisRepository.swift in Sources */,
 				1E6EF99526026C56002F700A /* Constant.swift in Sources */,
+				1E6EF9D4260385DA002F700A /* UIDependencies.swift in Sources */,
+				1E6EFA052603A70F002F700A /* MapDependencies.swift in Sources */,
+				1E6EF9BD26038176002F700A /* APICoreDependencies.swift in Sources */,
+				1E6EFA0A2603A7EC002F700A /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
