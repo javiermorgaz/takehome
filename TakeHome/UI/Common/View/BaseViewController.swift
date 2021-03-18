@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol BaseView: class {
+    func showTitle(_ title: String)
+    func showInfoView(message: String)
+    func removeInfoView()
+}
+
 class BaseViewController: UIViewController, BaseView {
 
     var infoViewMessage: String?
