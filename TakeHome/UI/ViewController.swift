@@ -6,15 +6,35 @@
 //
 
 import UIKit
+import Combine
 
 class ViewController: UIViewController {
+
+    private var cancellable = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = .white
-        let label = UILabel(frame: CGRect(x: 50, y: 50, width: 100, height: 50))
-        label.text = "Hello World"
-        self.view.addSubview(label)
+        testPois()
+    }
+
+    private func testPois() {
+        let bounds = Bounds(p1Lon: 9.757589, p1Lat: 53.694865, p2Lon: 10.099891, p2Lat: 53.394655)
+
+        PoisAPI(restClient: RestClient(baseUrl: Constants.baseURL)).getPois(bounds)
+            .receive(on: DispatchQueue.main)
+//            .map { ViewModel($0) }
+            .sink(receiveCompletion: { error in
+                switch error {
+                case .finished:
+                    break
+                case .failure:
+                    break
+                }
+            }, receiveValue: { data in
+                print(data)
+            })
+            .store(in: &cancellable)
+
     }
 }
