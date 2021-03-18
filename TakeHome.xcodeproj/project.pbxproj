@@ -21,6 +21,9 @@
 		1E6EF9A126032863002F700A /* GetPoisUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9A026032863002F700A /* GetPoisUseCase.swift */; };
 		1E6EF9A72603292B002F700A /* PoisRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9A62603292B002F700A /* PoisRepository.swift */; };
 		1E6EF9AD260329B0002F700A /* PoisAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9AC260329B0002F700A /* PoisAPIClient.swift */; };
+		1E6EF9B826038041002F700A /* CoreDependences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9B726038041002F700A /* CoreDependences.swift */; };
+		1E6EF9BD26038176002F700A /* APICoreDependences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9BC26038176002F700A /* APICoreDependences.swift */; };
+		1E6EF9C52603821B002F700A /* PoisCoreDependences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF9C42603821B002F700A /* PoisCoreDependences.swift */; };
 		4F64796E566D05B5E27B5BF2 /* Pods_TakeHome_TakeHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C77AA20772996228285346 /* Pods_TakeHome_TakeHomeUITests.framework */; };
 		A2F770DBE47A8FA5A028CABA /* Pods_TakeHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AF187C469A81775179A399 /* Pods_TakeHome.framework */; };
 		FDBCF8207CAF74C53D09B842 /* Pods_TakeHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B885242F22C6BCEE1DB913 /* Pods_TakeHomeTests.framework */; };
@@ -65,6 +68,9 @@
 		1E6EF9A026032863002F700A /* GetPoisUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPoisUseCase.swift; sourceTree = "<group>"; };
 		1E6EF9A62603292B002F700A /* PoisRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisRepository.swift; sourceTree = "<group>"; };
 		1E6EF9AC260329B0002F700A /* PoisAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisAPIClient.swift; sourceTree = "<group>"; };
+		1E6EF9B726038041002F700A /* CoreDependences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDependences.swift; sourceTree = "<group>"; };
+		1E6EF9BC26038176002F700A /* APICoreDependences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICoreDependences.swift; sourceTree = "<group>"; };
+		1E6EF9C42603821B002F700A /* PoisCoreDependences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisCoreDependences.swift; sourceTree = "<group>"; };
 		1FBEC57366626ED9463A755F /* Pods-TakeHome-TakeHomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeHome-TakeHomeUITests.debug.xcconfig"; path = "Target Support Files/Pods-TakeHome-TakeHomeUITests/Pods-TakeHome-TakeHomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		21AF187C469A81775179A399 /* Pods_TakeHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B885242F22C6BCEE1DB913 /* Pods_TakeHomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeHomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,7 +193,7 @@
 		1E6EF96B2601E1F5002F700A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1E6EF96E2601E2E5002F700A /* Dependencies */,
+				1E6EF96E2601E2E5002F700A /* Dependency Builders */,
 				1E6EF96D2601E202002F700A /* Domain */,
 				1E6EF96C2601E1FC002F700A /* Data */,
 			);
@@ -212,11 +218,14 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		1E6EF96E2601E2E5002F700A /* Dependencies */ = {
+		1E6EF96E2601E2E5002F700A /* Dependency Builders */ = {
 			isa = PBXGroup;
 			children = (
+				1E6EF9B726038041002F700A /* CoreDependences.swift */,
+				1E6EF9BC26038176002F700A /* APICoreDependences.swift */,
+				1E6EF9C42603821B002F700A /* PoisCoreDependences.swift */,
 			);
-			path = Dependencies;
+			path = "Dependency Builders";
 			sourceTree = "<group>";
 		};
 		1E6EF96F2601E53C002F700A /* UI */ = {
@@ -540,13 +549,16 @@
 				1E6EF98526026867002F700A /* RestClient.swift in Sources */,
 				1E6EF99C260327AC002F700A /* PoisDTO.swift in Sources */,
 				1E6EF7D62601D4A2002F700A /* ViewController.swift in Sources */,
+				1E6EF9C52603821B002F700A /* PoisCoreDependences.swift in Sources */,
 				1E6EF9A126032863002F700A /* GetPoisUseCase.swift in Sources */,
 				1E6EF98D2602688F002F700A /* APIRouter.swift in Sources */,
 				1E6EF7D22601D4A2002F700A /* AppDelegate.swift in Sources */,
 				1E6EF9AD260329B0002F700A /* PoisAPIClient.swift in Sources */,
 				1E6EF7D42601D4A2002F700A /* SceneDelegate.swift in Sources */,
+				1E6EF9B826038041002F700A /* CoreDependences.swift in Sources */,
 				1E6EF9A72603292B002F700A /* PoisRepository.swift in Sources */,
 				1E6EF99526026C56002F700A /* Constant.swift in Sources */,
+				1E6EF9BD26038176002F700A /* APICoreDependences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
