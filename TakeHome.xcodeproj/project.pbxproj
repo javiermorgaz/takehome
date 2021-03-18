@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1E6EF7D22601D4A2002F700A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF7D12601D4A2002F700A /* AppDelegate.swift */; };
 		1E6EF7D42601D4A2002F700A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF7D32601D4A2002F700A /* SceneDelegate.swift */; };
-		1E6EF7D62601D4A2002F700A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF7D52601D4A2002F700A /* ViewController.swift */; };
 		1E6EF7DB2601D4A3002F700A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E6EF7DA2601D4A3002F700A /* Assets.xcassets */; };
 		1E6EF7DE2601D4A3002F700A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E6EF7DC2601D4A3002F700A /* LaunchScreen.storyboard */; };
 		1E6EF7E92601D4A3002F700A /* TakeHomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EF7E82601D4A3002F700A /* TakeHomeTests.swift */; };
@@ -33,6 +32,9 @@
 		1E6EFA152603A811002F700A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFA142603A811002F700A /* MapViewController.swift */; };
 		1E6EFA1D2603A8E8002F700A /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFA1C2603A8E8002F700A /* ListPresenter.swift */; };
 		1E6EFA222603A923002F700A /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFA212603A923002F700A /* MapPresenter.swift */; };
+		1E6EFA3C2603B12E002F700A /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E6EFA3B2603B12E002F700A /* MapViewController.xib */; };
+		1E6EFA462603BA66002F700A /* MapPoi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFA452603BA66002F700A /* MapPoi.swift */; };
+		1E6EFA4E2603C250002F700A /* MapBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFA4D2603C250002F700A /* MapBounds.swift */; };
 		4F64796E566D05B5E27B5BF2 /* Pods_TakeHome_TakeHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C77AA20772996228285346 /* Pods_TakeHome_TakeHomeUITests.framework */; };
 		A2F770DBE47A8FA5A028CABA /* Pods_TakeHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AF187C469A81775179A399 /* Pods_TakeHome.framework */; };
 		FDBCF8207CAF74C53D09B842 /* Pods_TakeHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B885242F22C6BCEE1DB913 /* Pods_TakeHomeTests.framework */; };
@@ -60,7 +62,6 @@
 		1E6EF7CE2601D4A2002F700A /* TakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E6EF7D12601D4A2002F700A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E6EF7D32601D4A2002F700A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1E6EF7D52601D4A2002F700A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1E6EF7DA2601D4A3002F700A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E6EF7DD2601D4A3002F700A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E6EF7DF2601D4A3002F700A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +90,9 @@
 		1E6EFA142603A811002F700A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1E6EFA1C2603A8E8002F700A /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		1E6EFA212603A923002F700A /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		1E6EFA3B2603B12E002F700A /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		1E6EFA452603BA66002F700A /* MapPoi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoi.swift; sourceTree = "<group>"; };
+		1E6EFA4D2603C250002F700A /* MapBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBounds.swift; sourceTree = "<group>"; };
 		1FBEC57366626ED9463A755F /* Pods-TakeHome-TakeHomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeHome-TakeHomeUITests.debug.xcconfig"; path = "Target Support Files/Pods-TakeHome-TakeHomeUITests/Pods-TakeHome-TakeHomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		21AF187C469A81775179A399 /* Pods_TakeHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B885242F22C6BCEE1DB913 /* Pods_TakeHomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeHomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,7 +256,6 @@
 				1E6EF9D2260385BF002F700A /* Common */,
 				1E6EF9DE2603A4DA002F700A /* List */,
 				1E6EF9DF2603A4E6002F700A /* Map */,
-				1E6EF7D52601D4A2002F700A /* ViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -354,8 +357,8 @@
 		1E6EF9E62603A534002F700A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1E6EFA092603A7EC002F700A /* ListViewController.swift */,
 				1E6EFA1C2603A8E8002F700A /* ListPresenter.swift */,
+				1E6EFA092603A7EC002F700A /* ListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -363,8 +366,11 @@
 		1E6EF9E72603A539002F700A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1E6EFA142603A811002F700A /* MapViewController.swift */,
 				1E6EFA212603A923002F700A /* MapPresenter.swift */,
+				1E6EFA142603A811002F700A /* MapViewController.swift */,
+				1E6EFA3B2603B12E002F700A /* MapViewController.xib */,
+				1E6EFA452603BA66002F700A /* MapPoi.swift */,
+				1E6EFA4D2603C250002F700A /* MapBounds.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -508,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E6EF7DE2601D4A3002F700A /* LaunchScreen.storyboard in Resources */,
+				1E6EFA3C2603B12E002F700A /* MapViewController.xib in Resources */,
 				1E6EF7DB2601D4A3002F700A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,12 +663,13 @@
 				1E6EF98526026867002F700A /* RestClient.swift in Sources */,
 				1E6EF9FD2603A685002F700A /* Extensions.swift in Sources */,
 				1E6EF99C260327AC002F700A /* PoisDTO.swift in Sources */,
+				1E6EFA4E2603C250002F700A /* MapBounds.swift in Sources */,
 				1E6EFA222603A923002F700A /* MapPresenter.swift in Sources */,
-				1E6EF7D62601D4A2002F700A /* ViewController.swift in Sources */,
 				1E6EF9C52603821B002F700A /* PoisCoreDependencies.swift in Sources */,
 				1E6EF9A126032863002F700A /* GetPoisUseCase.swift in Sources */,
 				1E6EF98D2602688F002F700A /* APIRouter.swift in Sources */,
 				1E6EFA1D2603A8E8002F700A /* ListPresenter.swift in Sources */,
+				1E6EFA462603BA66002F700A /* MapPoi.swift in Sources */,
 				1E6EF7D22601D4A2002F700A /* AppDelegate.swift in Sources */,
 				1E6EF9F72603A5ED002F700A /* BaseViewController.swift in Sources */,
 				1E6EF9AD260329B0002F700A /* PoisAPIClient.swift in Sources */,
