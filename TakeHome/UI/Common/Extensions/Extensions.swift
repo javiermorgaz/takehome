@@ -27,8 +27,8 @@ extension UIView {
 
 extension UIColor {
     static let primary = UIColor(named: "primary")
-    static let interaction = UIColor(named: "interaction")
+    static let onPrimary = UIColor(named: "onPrimary")
+    static let secondary = UIColor(named: "secondary")
     static let background = UIColor(named: "background")
-    static let backgroundAlternative = UIColor(named: "backgroundAlternative")
     static let onBackground = UIColor(named: "onBackground")
 }

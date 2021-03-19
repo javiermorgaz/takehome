@@ -15,7 +15,7 @@ struct Bounds {
 }
 
 protocol GetPoisUseCase {
-    func execute(_ bounds: Bounds) -> AnyPublisher<PoisDTO, Error>
+    func execute(bounds: Bounds) -> AnyPublisher<PoisDTO, Error>
 }
 
 struct GetPois: GetPoisUseCase {
@@ -26,7 +26,7 @@ struct GetPois: GetPoisUseCase {
         self.repository = repository
     }
 
-    func execute(_ bounds: Bounds) -> AnyPublisher<PoisDTO, Error> {
+    func execute(bounds: Bounds) -> AnyPublisher<PoisDTO, Error> {
         repository.getPois(bounds)
     }
 }

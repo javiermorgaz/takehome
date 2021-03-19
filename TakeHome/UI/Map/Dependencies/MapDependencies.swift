@@ -16,7 +16,10 @@ class MapDependencies: RootUIDependencies {
         return mapViewController
     }
 
-    private func provideMapPresenter<T: UIViewController & MapView>(view: T) -> MapPresenter {
-        return MapPresenter(view: view)
+    private func provideMapPresenter<T: UIViewController & MapView>(view: T) -> MapViewPresenter {
+        let router = MapRouter(rootViewController: view)
+        return MapPresenter(view: view,
+                            getPoisUseCase: root.core.pois.provideGetPoisUseCase(),
+                            router: router)
     }
 }
