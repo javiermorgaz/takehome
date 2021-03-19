@@ -27,7 +27,14 @@ final class MapViewController: BaseViewController, MapView {
         mapView.delegate = self
         presenter.viewDidLoad()
         setUpNavigationBar()
+
+        mapView.register(
+            MapPoiView.self,
+            forAnnotationViewWithReuseIdentifier:
+                MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
+
+    // MARK: - MapView
 
     func update(pois: [MapPoi]) {
         mapView.addAnnotations(pois)
@@ -51,10 +58,14 @@ final class MapViewController: BaseViewController, MapView {
         mapView.selectAnnotation(poi, animated: true)
     }
 
+    // MARK: - Private
+
     private func setUpNavigationBar() {
 
-        showTitle("Take Home")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Taxis", style: .plain, target: self, action: #selector(didTapListButton))
+        showTitle(NSLocalizedString("takeHome", comment: "Title"))
+        UINavigationBar.appearance().barTintColor = UIColor.primary
+        UINavigationBar.appearance().tintColor = UIColor.onPrimary
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("taxis", comment: "Taxis list button"), style: .plain, target: self, action: #selector(didTapListButton))
     }
 
     @objc fileprivate func didTapListButton(_ sender: AnyObject) {

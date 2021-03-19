@@ -81,6 +81,7 @@ final class MapPresenter: MapViewPresenter {
             }, receiveValue: { [weak self] poiList in
                 self?.mapPois = poiList.map {
                     MapPoi(title: String($0.id),
+                           state: $0.state,
                            coordinate: CLLocationCoordinate2D(latitude: $0.coordinate.latitude,
                                                               longitude: $0.coordinate.longitude)) }
                 self?.updatePois()
