@@ -9,23 +9,66 @@ import Foundation
 import Combine
 import MapKit
 
-final class MapPresenter {
+protocol MapViewPresenter {
+    func viewDidLoad()
+    func didTapListButton()
+    func mapRegionDidChange(_ bounds: MapBounds)
+}
+
+final class MapPresenter: MapViewPresenter {
+
+    struct Keys {
+        static let hamburgCoord1Lat: Double = 53.694865
+        static let hamburgCoord1Long: Double = 9.757589
+        static let hamburgCoord2Lat: Double = 53.394655
+        static let hamburgCoord2Long: Double = 10.099891
+    }
+
+    private let getPoisUseCase: GetPoisUseCase
+    private let router: MapRoutable
 
     private var cancellable = Set<AnyCancellable>()
     private weak var view: MapView?
+    private var mapPois = [MapPoi]()
 
-    init(view: MapView) {
+    init(view: MapView,
+         getPoisUseCase: GetPoisUseCase,
+         router: MapRoutable) {
         self.view = view
-        getPois()
+        self.getPoisUseCase = getPoisUseCase
+        self.router = router
     }
 
-    private func getPois() {
-        
-//        view?.updateLocation(bounds: mapBounds)
-        
-        let bounds = Bounds(p1Lon: 9.757589, p1Lat: 53.694865, p2Lon: 10.099891, p2Lat: 53.394655)
+    // MARK: - MapViewPresenter
 
-        PoisAPI(restClient: RestClient(baseUrl: Constants.baseURL)).getPois(bounds)
+    func viewDidLoad() {
+        setMapRegion()
+    }
+
+    func didTapListButton() {
+        router.showList()
+    }
+
+    func mapRegionDidChange(_ bounds: MapBounds) {
+        getPois(bounds)
+    }
+
+    // MARK: - Private
+
+    private func setMapRegion() {
+
+        let mapBounds = MapBounds(coordinate1: CLLocationCoordinate2D(latitude: Keys.hamburgCoord1Lat, longitude: Keys.hamburgCoord1Long),
+                                  coordinate2: CLLocationCoordinate2D(latitude: Keys.hamburgCoord2Lat, longitude: Keys.hamburgCoord2Long))
+
+        view?.updateLocation(bounds: mapBounds)
+        getPois(mapBounds)
+    }
+
+    private func getPois(_ bounds: MapBounds) {
+
+        let bounds = Bounds(p1Lon: bounds.coordinate1.longitude, p1Lat: bounds.coordinate1.latitude, p2Lon: bounds.coordinate2.longitude, p2Lat: bounds.coordinate2.latitude)
+
+        getPoisUseCase.execute(bounds: bounds)
             .receive(on: DispatchQueue.main)
             .map { $0.poiList }
             .sink(receiveCompletion: { error in
@@ -35,9 +78,17 @@ final class MapPresenter {
                 case .failure:
                     break
                 }
-            }, receiveValue: { poiList in
-                self.view?.update(pois: poiList.map { MapPoi(title: String($0.id), coordinate: CLLocationCoordinate2D(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude)) })
+            }, receiveValue: { [weak self] poiList in
+                self?.mapPois = poiList.map {
+                    MapPoi(title: String($0.id),
+                           coordinate: CLLocationCoordinate2D(latitude: $0.coordinate.latitude,
+                                                              longitude: $0.coordinate.longitude)) }
+                self?.updatePois()
             })
             .store(in: &cancellable)
+    }
+
+    private func updatePois() {
+        view?.update(pois: mapPois)
     }
 }
