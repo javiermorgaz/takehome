@@ -8,7 +8,8 @@
 import UIKit
 
 protocol MapRoutable {
-    func showList()
+    func showList(_ items: [PoiItem], delegate: MapViewDelegate)
+    func dismiss()
 }
 
 class MapRouter: MapRoutable {
@@ -19,10 +20,17 @@ class MapRouter: MapRoutable {
         self.rootViewController = rootViewController
     }
 
-    func showList() {
+    func showList(_ items: [PoiItem], delegate: MapViewDelegate) {
+
         guard let rootViewController = rootViewController else { return }
 
-        let viewController = UIDependencies.shared.list.provideListView() // UIKit
+        let viewController = UIDependencies.shared.list.provideListView(pois: items, delegate: delegate)
         rootViewController.present(viewController, animated: true, completion: nil)
+    }
+
+    func dismiss() {
+
+        guard let rootViewController = rootViewController else { return }
+        rootViewController.dismiss(animated: true, completion: nil)
     }
 }

@@ -9,14 +9,18 @@ import UIKit
 
 class ListDependencies: RootUIDependencies {
 
-    func provideListView() -> UIViewController {
+    func provideListView(pois: [PoiItem], delegate: MapViewDelegate?) -> UIViewController {
         let listViewController = ListViewController()
-        listViewController.presenter = provideListPresenter(view: listViewController)
+        listViewController.presenter = provideListPresenter(view: listViewController, pois: pois, delegate: delegate)
 
         return listViewController
     }
 
-    private func provideListPresenter<T: UIViewController & ListView>(view: T) -> ListPresenter {
-        return ListPresenter(view: view)
+    private func provideListPresenter<T: UIViewController & ListView>(view: T,
+                                                                      pois: [PoiItem],
+                                                                      delegate: MapViewDelegate?) -> ListPresenter {
+        return ListPresenter(view: view,
+                             items: pois,
+                             delegate: delegate)
     }
 }

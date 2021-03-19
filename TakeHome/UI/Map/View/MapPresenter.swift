@@ -5,7 +5,6 @@
 //  Created by Jmorgaz on 18/3/21.
 //
 
-import Foundation
 import Combine
 import MapKit
 
@@ -13,6 +12,10 @@ protocol MapViewPresenter {
     func viewDidLoad()
     func didTapListButton()
     func mapRegionDidChange(_ bounds: MapBounds)
+}
+
+protocol MapViewDelegate: class {
+    func didTapItem(index: Int)
 }
 
 final class MapPresenter: MapViewPresenter {
@@ -29,6 +32,7 @@ final class MapPresenter: MapViewPresenter {
 
     private var cancellable = Set<AnyCancellable>()
     private weak var view: MapView?
+    private var poiList = [Poi]()
     private var mapPois = [MapPoi]()
 
     init(view: MapView,
@@ -46,7 +50,7 @@ final class MapPresenter: MapViewPresenter {
     }
 
     func didTapListButton() {
-        router.showList()
+        router.showList(poiList.map { PoiItem(poi: $0) }, delegate: self)
     }
 
     func mapRegionDidChange(_ bounds: MapBounds) {
@@ -79,17 +83,27 @@ final class MapPresenter: MapViewPresenter {
                     break
                 }
             }, receiveValue: { [weak self] poiList in
-                self?.mapPois = poiList.map {
-                    MapPoi(title: String($0.id),
-                           state: $0.state,
-                           coordinate: CLLocationCoordinate2D(latitude: $0.coordinate.latitude,
-                                                              longitude: $0.coordinate.longitude)) }
+                self?.poiList = poiList
                 self?.updatePois()
             })
             .store(in: &cancellable)
     }
 
     private func updatePois() {
+
+        mapPois = poiList.map {
+            MapPoi(title: String($0.id),
+                   state: $0.state,
+                   coordinate: CLLocationCoordinate2D(latitude: $0.coordinate.latitude,
+                                                      longitude: $0.coordinate.longitude)) }
         view?.update(pois: mapPois)
+    }
+}
+
+extension MapPresenter: MapViewDelegate {
+
+    func didTapItem(index: Int) {
+        view?.select(poi: mapPois[index])
+        router.dismiss()
     }
 }
