@@ -9,6 +9,7 @@ import Foundation
 import MapKit
 
 class MapPoi: NSObject, MKAnnotation {
+    
     var title: String?
     var state: State
     var coordinate: CLLocationCoordinate2D

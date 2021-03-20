@@ -16,6 +16,7 @@ protocol MapViewPresenter {
 
 protocol MapViewDelegate: class {
     func didTapItem(index: Int)
+    func didTapDoneButton()
 }
 
 final class MapPresenter: MapViewPresenter {
@@ -104,6 +105,10 @@ extension MapPresenter: MapViewDelegate {
 
     func didTapItem(index: Int) {
         view?.select(poi: mapPois[index])
+        router.dismiss()
+    }
+
+    func didTapDoneButton() {
         router.dismiss()
     }
 }

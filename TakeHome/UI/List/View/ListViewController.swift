@@ -28,11 +28,10 @@ class ListViewController: BaseViewController, ListView {
     var presenter: ListPresenter!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
 
-        let nib = UINib(nibName: String(describing: ItemCellView.self), bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: Keys.cellIdentifier)
-        tableView.estimatedRowHeight = Keys.estimatedRowHeight
+        super.viewDidLoad()
+        setupTableView()
+        setupNavigationBar()
         presenter.viewDidLoad()
     }
 
@@ -40,6 +39,23 @@ class ListViewController: BaseViewController, ListView {
 
     func update(items: [PoiItem]) {
         self.items = items
+    }
+
+    // MARK: - Private
+
+    private func setupTableView() {
+        tableView.register(UINib(nibName: String(describing: ItemCellView.self), bundle: nil), forCellReuseIdentifier: Keys.cellIdentifier)
+        tableView.estimatedRowHeight = Keys.estimatedRowHeight
+    }
+
+    private func setupNavigationBar() {
+
+        showTitle(NSLocalizedString("vehicles", comment: "Title"))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapDoneButton))
+    }
+
+    @objc fileprivate func didTapDoneButton(_ sender: AnyObject) {
+        presenter.didTapDoneButton()
     }
 }
 
@@ -60,4 +76,8 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.didTapItem(index: indexPath.row)
     }
+}
+
+private extension Selector {
+    static let didTapListButton = #selector(ListViewController.didTapDoneButton)
 }

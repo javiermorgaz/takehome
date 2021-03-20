@@ -24,7 +24,7 @@ class MapRouter: MapRoutable {
 
         guard let rootViewController = rootViewController else { return }
 
-        let viewController = UIDependencies.shared.list.provideListView(pois: items, delegate: delegate)
+        let viewController = UINavigationController(rootViewController: UIDependencies.shared.list.provideListView(pois: items, delegate: delegate))
         rootViewController.present(viewController, animated: true, completion: nil)
     }
 

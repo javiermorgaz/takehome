@@ -23,15 +23,9 @@ final class MapViewController: BaseViewController, MapView {
     override func viewDidLoad() {
 
         super.viewDidLoad()
-
-        mapView.delegate = self
+        setupMap()
+        setupNavigationBar()
         presenter.viewDidLoad()
-        setUpNavigationBar()
-
-        mapView.register(
-            MapPoiView.self,
-            forAnnotationViewWithReuseIdentifier:
-                MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
 
     // MARK: - MapView
@@ -60,12 +54,19 @@ final class MapViewController: BaseViewController, MapView {
 
     // MARK: - Private
 
-    private func setUpNavigationBar() {
+    private func setupMap() {
+
+        mapView.delegate = self
+        mapView.register(MapPoiView.self,
+                         forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+    }
+
+    private func setupNavigationBar() {
 
         showTitle(NSLocalizedString("takeHome", comment: "Title"))
         UINavigationBar.appearance().barTintColor = UIColor.primary
         UINavigationBar.appearance().tintColor = UIColor.onPrimary
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("taxis", comment: "Taxis list button"), style: .plain, target: self, action: #selector(didTapListButton))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("vehicles", comment: "Vehicles list button"), style: .done, target: self, action: #selector(didTapListButton))
     }
 
     @objc fileprivate func didTapListButton(_ sender: AnyObject) {

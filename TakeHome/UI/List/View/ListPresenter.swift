@@ -8,6 +8,7 @@
 protocol ListViewPresenter {
     func viewDidLoad()
     func didTapItem(index: Int)
+    func didTapDoneButton()
 }
 
 final class ListPresenter: ListViewPresenter {
@@ -32,5 +33,9 @@ final class ListPresenter: ListViewPresenter {
 
     func didTapItem(index: Int) {
         delegate?.didTapItem(index: index)
+    }
+
+    func didTapDoneButton() {
+        delegate?.didTapDoneButton()
     }
 }
