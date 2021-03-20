@@ -6,21 +6,24 @@
 //
 
 import UIKit
+import MapKit
 
 class ListDependencies: RootUIDependencies {
 
-    func provideListView(pois: [PoiItem], delegate: MapViewDelegate?) -> UIViewController {
+    func provideListView(pois: [MapPoi], location: CLLocationCoordinate2D?, delegate: MapViewDelegate?) -> UIViewController {
         let listViewController = ListViewController()
-        listViewController.presenter = provideListPresenter(view: listViewController, pois: pois, delegate: delegate)
+        listViewController.presenter = provideListPresenter(view: listViewController, pois: pois, location: location, delegate: delegate)
 
         return listViewController
     }
 
     private func provideListPresenter<T: UIViewController & ListView>(view: T,
-                                                                      pois: [PoiItem],
+                                                                      pois: [MapPoi],
+                                                                      location: CLLocationCoordinate2D?,
                                                                       delegate: MapViewDelegate?) -> ListPresenter {
         return ListPresenter(view: view,
                              items: pois,
+                             location: location,
                              delegate: delegate)
     }
 }

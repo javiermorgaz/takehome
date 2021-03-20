@@ -39,10 +39,11 @@
 		1E6EFB862604F0B7002F700A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E6EFB852604F0B7002F700A /* Colors.xcassets */; };
 		1E6EFC9E2604F686002F700A /* MapPoiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFC9D2604F686002F700A /* MapPoiView.swift */; };
 		1E6EFCA72604F8B2002F700A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E6EFCA92604F8B2002F700A /* Localizable.strings */; };
-		1E6EFCB12604FF56002F700A /* PoiItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFCB02604FF56002F700A /* PoiItem.swift */; };
 		1E6EFCB6260506AC002F700A /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E6EFCB5260506AC002F700A /* ListViewController.xib */; };
 		1E6EFCBB26050837002F700A /* ItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EFCBA26050837002F700A /* ItemCellView.swift */; };
 		1E6EFCC02605088C002F700A /* ItemCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E6EFCBF2605088C002F700A /* ItemCellView.xib */; };
+		1E9BBB892605E37F0037336A /* ListViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BBB882605E37F0037336A /* ListViewHeader.swift */; };
+		1E9BBB8E2605E8920037336A /* ListViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9BBB8D2605E8920037336A /* ListViewHeader.xib */; };
 		4F64796E566D05B5E27B5BF2 /* Pods_TakeHome_TakeHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C77AA20772996228285346 /* Pods_TakeHome_TakeHomeUITests.framework */; };
 		A2F770DBE47A8FA5A028CABA /* Pods_TakeHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AF187C469A81775179A399 /* Pods_TakeHome.framework */; };
 		FDBCF8207CAF74C53D09B842 /* Pods_TakeHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B885242F22C6BCEE1DB913 /* Pods_TakeHomeTests.framework */; };
@@ -105,10 +106,11 @@
 		1E6EFB852604F0B7002F700A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1E6EFC9D2604F686002F700A /* MapPoiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoiView.swift; sourceTree = "<group>"; };
 		1E6EFCA82604F8B2002F700A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1E6EFCB02604FF56002F700A /* PoiItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiItem.swift; sourceTree = "<group>"; };
 		1E6EFCB5260506AC002F700A /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		1E6EFCBA26050837002F700A /* ItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellView.swift; sourceTree = "<group>"; };
 		1E6EFCBF2605088C002F700A /* ItemCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCellView.xib; sourceTree = "<group>"; };
+		1E9BBB882605E37F0037336A /* ListViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewHeader.swift; sourceTree = "<group>"; };
+		1E9BBB8D2605E8920037336A /* ListViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewHeader.xib; sourceTree = "<group>"; };
 		1FBEC57366626ED9463A755F /* Pods-TakeHome-TakeHomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeHome-TakeHomeUITests.debug.xcconfig"; path = "Target Support Files/Pods-TakeHome-TakeHomeUITests/Pods-TakeHome-TakeHomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		21AF187C469A81775179A399 /* Pods_TakeHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B885242F22C6BCEE1DB913 /* Pods_TakeHomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeHomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -381,6 +383,8 @@
 				1E6EFCB5260506AC002F700A /* ListViewController.xib */,
 				1E6EFCBA26050837002F700A /* ItemCellView.swift */,
 				1E6EFCBF2605088C002F700A /* ItemCellView.xib */,
+				1E9BBB882605E37F0037336A /* ListViewHeader.swift */,
+				1E9BBB8D2605E8920037336A /* ListViewHeader.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -394,7 +398,6 @@
 				1E6EFA452603BA66002F700A /* MapPoi.swift */,
 				1E6EFA4D2603C250002F700A /* MapBounds.swift */,
 				1E6EFC9D2604F686002F700A /* MapPoiView.swift */,
-				1E6EFCB02604FF56002F700A /* PoiItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				1E6EFCA72604F8B2002F700A /* Localizable.strings in Resources */,
 				1E6EF7DE2601D4A3002F700A /* LaunchScreen.storyboard in Resources */,
 				1E6EFCB6260506AC002F700A /* ListViewController.xib in Resources */,
+				1E9BBB8E2605E8920037336A /* ListViewHeader.xib in Resources */,
 				1E6EFB862604F0B7002F700A /* Colors.xcassets in Resources */,
 				1E6EFCC02605088C002F700A /* ItemCellView.xib in Resources */,
 				1E6EFA3C2603B12E002F700A /* MapViewController.xib in Resources */,
@@ -707,13 +711,13 @@
 				1E6EF98D2602688F002F700A /* APIRouter.swift in Sources */,
 				1E6EFA1D2603A8E8002F700A /* ListPresenter.swift in Sources */,
 				1E6EFA462603BA66002F700A /* MapPoi.swift in Sources */,
+				1E9BBB892605E37F0037336A /* ListViewHeader.swift in Sources */,
 				1E6EF7D22601D4A2002F700A /* AppDelegate.swift in Sources */,
 				1E6EF9F72603A5ED002F700A /* BaseViewController.swift in Sources */,
 				1E6EF9AD260329B0002F700A /* PoisAPIClient.swift in Sources */,
 				1E6EF7D42601D4A2002F700A /* SceneDelegate.swift in Sources */,
 				1E6EF9B826038041002F700A /* CoreDependencies.swift in Sources */,
 				1E6EF9E92603A553002F700A /* ListDependencies.swift in Sources */,
-				1E6EFCB12604FF56002F700A /* PoiItem.swift in Sources */,
 				1E6EFA152603A811002F700A /* MapViewController.swift in Sources */,
 				1E6EFB732604C3D2002F700A /* MapRouter.swift in Sources */,
 				1E6EF9A72603292B002F700A /* PoisRepository.swift in Sources */,

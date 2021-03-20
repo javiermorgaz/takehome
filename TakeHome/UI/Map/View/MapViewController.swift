@@ -31,7 +31,7 @@ final class MapViewController: BaseViewController, MapView {
     // MARK: - MapView
 
     func update(pois: [MapPoi]) {
-        mapView.addAnnotations(pois)
+        mapView.addAnnotations(pois.map { $0.mapAnnotation })
     }
 
     func updateLocation(bounds: MapBounds) {
@@ -48,8 +48,8 @@ final class MapViewController: BaseViewController, MapView {
 
     func select(poi: MapPoi) {
 
-        mapView.centerCoordinate = poi.coordinate
-        mapView.selectAnnotation(poi, animated: true)
+        mapView.centerCoordinate = poi.mapAnnotation.coordinate
+        mapView.selectAnnotation(poi.mapAnnotation, animated: true)
     }
 
     // MARK: - Private

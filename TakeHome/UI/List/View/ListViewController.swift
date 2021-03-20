@@ -8,7 +8,8 @@
 import UIKit
 
 protocol ListView: BaseView {
-    func update(items: [PoiItem])
+    func update(items: [MapPoi])
+    func update(location: String)
 }
 
 class ListViewController: BaseViewController, ListView {
@@ -16,10 +17,13 @@ class ListViewController: BaseViewController, ListView {
     enum Keys {
         static let cellIdentifier = "ItemCellView"
         static let estimatedRowHeight: CGFloat = 240
+        static let headerHeight: CGFloat = 60
     }
 
     @IBOutlet weak private var tableView: UITableView!
-    private var items =  [PoiItem]() {
+    private let headerView = Bundle.main.loadNibNamed("ListViewHeader", owner: self, options: nil)?.first as? ListViewHeader
+
+    private var items =  [MapPoi]() {
         didSet {
             tableView.reloadData()
         }
@@ -37,15 +41,21 @@ class ListViewController: BaseViewController, ListView {
 
     // MARK: - ListView
 
-    func update(items: [PoiItem]) {
+    func update(items: [MapPoi]) {
         self.items = items
+    }
+
+    func update(location: String) {
+        headerView?.subtitleLabel.text = location
     }
 
     // MARK: - Private
 
     private func setupTableView() {
+
         tableView.register(UINib(nibName: String(describing: ItemCellView.self), bundle: nil), forCellReuseIdentifier: Keys.cellIdentifier)
         tableView.estimatedRowHeight = Keys.estimatedRowHeight
+        tableView.sectionHeaderHeight = Keys.headerHeight
     }
 
     private func setupNavigationBar() {
@@ -68,13 +78,17 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Keys.cellIdentifier, for: indexPath) as! ItemCellView
         let item = items[indexPath.row]
-        cell.configure(item.title)
+        cell.configure(item.id)
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.didTapItem(index: indexPath.row)
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return headerView
     }
 }
 
