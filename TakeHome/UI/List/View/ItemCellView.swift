@@ -13,7 +13,8 @@ class ItemCellView: UITableViewCell {
     @IBOutlet private weak var idLabel: UILabel!
     @IBOutlet private weak var vehicleImageView: UIImageView!
     @IBOutlet private weak var statusImageView: UIImageView!
-
+    @IBOutlet weak var separatorView: UIView!
+    
     private enum Keys {
         static let vehicleLabelFontSize: CGFloat = 18
         static let idLabelFontSize: CGFloat = 16
@@ -42,6 +43,7 @@ class ItemCellView: UITableViewCell {
 
     private func setupView() {
 
+        separatorView.backgroundColor = UIColor.primary
         vehicleImageView.image = UIImage(systemName: "car")
         vehicleImageView.tintColor = UIColor.primary
         vehicleLabel.font = .systemFont(ofSize: Keys.vehicleLabelFontSize, weight: .bold)
