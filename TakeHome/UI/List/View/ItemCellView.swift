@@ -14,7 +14,7 @@ class ItemCellView: UITableViewCell {
     @IBOutlet private weak var vehicleImageView: UIImageView!
     @IBOutlet private weak var statusImageView: UIImageView!
     @IBOutlet weak var separatorView: UIView!
-    
+
     private enum Keys {
         static let vehicleLabelFontSize: CGFloat = 18
         static let idLabelFontSize: CGFloat = 16
