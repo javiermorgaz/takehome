@@ -56,6 +56,7 @@ class ListViewController: BaseViewController, ListView {
         tableView.register(UINib(nibName: String(describing: ItemCellView.self), bundle: nil), forCellReuseIdentifier: Keys.cellIdentifier)
         tableView.estimatedRowHeight = Keys.estimatedRowHeight
         tableView.sectionHeaderHeight = Keys.headerHeight
+        tableView.separatorColor = UIColor.primary
     }
 
     private func setupNavigationBar() {
@@ -78,7 +79,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Keys.cellIdentifier, for: indexPath) as! ItemCellView
         let item = items[indexPath.row]
-        cell.configure(item.id)
+        cell.configure(id: item.id, vehicle: item.type, status: item.state)
 
         return cell
     }

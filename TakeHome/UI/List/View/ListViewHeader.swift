@@ -12,6 +12,7 @@ class ListViewHeader: UIView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,12 +20,12 @@ class ListViewHeader: UIView {
     }
 
     private func setupView() {
+
+        separatorView.backgroundColor = UIColor.primary
         imageView.image = UIImage(systemName: "location.fill.viewfinder")
         imageView.tintColor = UIColor.primary
         titleLabel.text = NSLocalizedString("locationTitle", comment: "Header title")
         titleLabel.font = .systemFont(ofSize: 16, weight: .regular)
-        titleLabel.textColor = UIColor.primary
-        subtitleLabel.font = .systemFont(ofSize: 16, weight: .regular)
-        subtitleLabel.textColor = UIColor.primary
+        subtitleLabel.font = .systemFont(ofSize: 16, weight: .bold)
     }
 }
