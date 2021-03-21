@@ -19,7 +19,7 @@ Two screens: Map and vehicle list.
 
 ## Installation
 
-Run 'pods install' in DomestikaTech root folder.
+Run 'pods install' in TakeHome root folder.
 
 Open generated 'TakeHome.xcworkspace'.
 
