@@ -26,11 +26,13 @@ class BaseViewController: UIViewController, BaseView {
     }
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     private lazy var infoView: UIView? = {
+
         guard let infoViewMessage = infoViewMessage else { return nil }
         let infoView = UIView()
         let label = UILabel(frame: CGRect(x: Keys.labelXPosition, y: Keys.labelYPosition, width: Keys.labelWidth, height: Keys.labelHeight))
@@ -49,6 +51,7 @@ class BaseViewController: UIViewController, BaseView {
     }
 
     func showInfoView(message: String) {
+
         self.infoViewMessage = message
         if let infoView = infoView, !view.subviews.contains(infoView) {
             view.addSubview(infoView)

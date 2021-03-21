@@ -34,7 +34,7 @@ final class ListPresenter: ListViewPresenter {
 
     func viewDidLoad() {
         view?.update(items: items)
-        getLocation()
+        getLocationCity()
     }
 
     func didTapItem(index: Int) {
@@ -45,16 +45,11 @@ final class ListPresenter: ListViewPresenter {
         delegate?.didTapDoneButton()
     }
 
-    func getLocation() {
-        guard let location = location else {
-            self.view?.update(location: "Error location")
-            return
-        }
+    func getLocationCity() {
+
+        guard let location = location else { return }
         CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: location.latitude, longitude: location.longitude)) { location, _ in
-            guard let city = location?.first?.locality else {
-                self.view?.update(location: "Error location")
-                return
-            }
+            guard let city = location?.first?.locality else { return }
             self.view?.update(location: city)
         }
     }
