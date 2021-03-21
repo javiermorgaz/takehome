@@ -2,6 +2,7 @@ PODS:
   - KIF (3.8.1):
     - KIF/Core (= 3.8.1)
   - KIF/Core (3.8.1)
+  - Nimble (9.0.0)
   - OHHTTPStubs/Core (9.1.0)
   - OHHTTPStubs/Default (9.1.0):
     - OHHTTPStubs/Core
@@ -15,24 +16,31 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (9.1.0)
   - OHHTTPStubs/Swift (9.1.0):
     - OHHTTPStubs/Default
+  - Sourcery (1.3.4)
   - SwiftLint (0.43.1)
 
 DEPENDENCIES:
   - KIF
+  - Nimble (~> 9.0.0)
   - OHHTTPStubs/Swift (~> 9.1.0)
+  - Sourcery (~> 1.3.4)
   - SwiftLint (~> 0.43.1)
 
 SPEC REPOS:
   trunk:
     - KIF
+    - Nimble
     - OHHTTPStubs
+    - Sourcery
     - SwiftLint
 
 SPEC CHECKSUMS:
   KIF: 273a6fea876c0b19b15718f1cafa023d501acc19
+  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
+  Sourcery: 1b5b0f816fbed6d0c7c066786fff4074e470e796
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: e9d2da0df7cdb2e79349e399fb7f635ba490911d
+PODFILE CHECKSUM: c2a75e9bf2b8ce848b28120ad8b089685b82649a
 
 COCOAPODS: 1.10.1

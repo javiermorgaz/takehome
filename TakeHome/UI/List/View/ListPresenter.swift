@@ -7,7 +7,8 @@
 
 import MapKit
 
-protocol ListViewPresenter {
+// sourcery: AutoMockable
+protocol ListViewPresenter: Presenter {
     func viewDidLoad()
     func didTapItem(index: Int)
     func didTapDoneButton()
@@ -33,7 +34,11 @@ final class ListPresenter: ListViewPresenter {
     // MARK: - ListViewPresenter
 
     func viewDidLoad() {
-        view?.update(items: items)
+        if items.isEmpty {
+            view?.showInfoView(message: NSLocalizedString("noVehicles", comment: "No vechicles description"))
+        } else {
+            view?.update(items: items)
+        }
         getLocationCity()
     }
 

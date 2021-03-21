@@ -8,7 +8,8 @@
 import Combine
 import MapKit
 
-protocol MapViewPresenter {
+// sourcery: AutoMockable
+protocol MapViewPresenter: Presenter {
     func viewDidLoad()
     func didTapListButton()
     func mapRegionDidChange(_ bounds: MapBounds)

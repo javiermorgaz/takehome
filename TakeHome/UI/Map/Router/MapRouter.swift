@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 
+// sourcery: AutoMockable
 protocol MapRoutable {
     func showList(_ items: [MapPoi], location: CLLocationCoordinate2D?, delegate: MapViewDelegate)
     func dismiss()
