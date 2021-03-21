@@ -11,7 +11,7 @@ class PoisCoreDependencies: RootCoreDependencies {
         PoisRepository(poisAPIClient: providePoisAPIClient())
     }
 
-    private func providePoisAPIClient() -> PoisAPIClient {
+    func providePoisAPIClient() -> PoisAPIClient {
         PoisAPI(restClient: root.api.provideRestClient(baseURL: Constants.baseURL))
     }
 

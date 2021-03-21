@@ -7,6 +7,7 @@
 
 import UIKit
 
+// sourcery: AutoMockable
 protocol ListView: BaseView {
     func update(items: [MapPoi])
     func update(location: String)
@@ -23,7 +24,11 @@ class ListViewController: BaseViewController, ListView {
         }
     }
 
-    var presenter: ListPresenter!
+    var listPresenter: ListViewPresenter!
+
+    override var presenter: Presenter? {
+        return listPresenter
+    }
 
     private enum Keys {
         static let cellIdentifier = "ItemCellView"
@@ -36,16 +41,13 @@ class ListViewController: BaseViewController, ListView {
         super.viewDidLoad()
         setupTableView()
         setupNavigationBar()
-        presenter.viewDidLoad()
+        listPresenter.viewDidLoad()
     }
 
     // MARK: - ListView
 
     func update(items: [MapPoi]) {
         self.items = items
-        if items.isEmpty {
-            showInfoView(message: NSLocalizedString("noVehicles", comment: "No vechicles description"))
-        }
     }
 
     func update(location: String) {
@@ -69,7 +71,7 @@ class ListViewController: BaseViewController, ListView {
     }
 
     @objc fileprivate func didTapDoneButton(_ sender: AnyObject) {
-        presenter.didTapDoneButton()
+        listPresenter.didTapDoneButton()
     }
 }
 
@@ -88,7 +90,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.didTapItem(index: indexPath.row)
+        listPresenter.didTapItem(index: indexPath.row)
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

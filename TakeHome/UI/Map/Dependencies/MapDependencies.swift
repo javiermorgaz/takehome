@@ -11,7 +11,7 @@ class MapDependencies: RootUIDependencies {
 
     func provideMapView() -> UIViewController {
         let mapViewController = MapViewController()
-        mapViewController.presenter = provideMapPresenter(view: mapViewController)
+        mapViewController.mapPresenter = provideMapPresenter(view: mapViewController)
 
         return mapViewController
     }

@@ -5,6 +5,7 @@ install! 'cocoapods', :warn_for_unused_master_specs_repo => false
 def testing_pods
     pod 'OHHTTPStubs/Swift', '~> 9.1.0'
     pod 'KIF', :configurations => ['Debug']
+    pod 'Nimble', '~> 9.0.0'
 end
 
 def common_pods
@@ -25,9 +26,12 @@ target 'TakeHome' do
     testing_pods
   end
 
-  target 'TakeHomeUITests' do
-    common_pods
-    testing_pods
-  end
+end
 
+post_install do |installer|
+ installer.pods_project.targets.each do |target|
+  target.build_configurations.each do |config|
+   config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+  end
+ end
 end

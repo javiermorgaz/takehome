@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 
+// sourcery: AutoMockable
 protocol MapView: BaseView {
     func updateLocation(bounds: MapBounds)
     func update(pois: [MapPoi])
@@ -18,14 +19,18 @@ final class MapViewController: BaseViewController, MapView {
 
     @IBOutlet private weak var mapView: MKMapView!
 
-    var presenter: MapViewPresenter!
+    var mapPresenter: MapViewPresenter!
+
+    override var presenter: Presenter? {
+        return mapPresenter
+    }
 
     override func viewDidLoad() {
 
         super.viewDidLoad()
         setupMap()
         setupNavigationBar()
-        presenter.viewDidLoad()
+        mapPresenter.viewDidLoad()
     }
 
     // MARK: - MapView
@@ -70,7 +75,7 @@ final class MapViewController: BaseViewController, MapView {
     }
 
     @objc fileprivate func didTapListButton(_ sender: AnyObject) {
-        presenter.didTapListButton()
+        mapPresenter.didTapListButton()
     }
 }
 
@@ -78,13 +83,11 @@ extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 
-        guard !mapView.annotations.isEmpty else { return }
-
         let coordinate1 = mapView.visibleMapRect.origin.coordinate
         let coordinate2 = mapView.convert(CGPoint(x: mapView.bounds.width, y: mapView.bounds.height),
                                           toCoordinateFrom: mapView)
 
-        presenter.mapRegionDidChange(MapBounds(coordinate1: coordinate1, coordinate2: coordinate2))
+        mapPresenter.mapRegionDidChange(MapBounds(coordinate1: coordinate1, coordinate2: coordinate2))
     }
 }
 

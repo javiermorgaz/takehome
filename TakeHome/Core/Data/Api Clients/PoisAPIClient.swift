@@ -7,6 +7,7 @@
 
 import Combine
 
+// sourcery: AutoMockable
 protocol PoisAPIClient {
     func getPois(_ bounds: Bounds) -> AnyPublisher<PoisDTO, Error>
 }

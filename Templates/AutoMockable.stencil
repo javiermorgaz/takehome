@@ -3,8 +3,10 @@
 
 import Foundation
 #if os(iOS) || os(tvOS) || os(watchOS)
-import UIKit
 @testable import TakeHome
+import UIKit
+import MapKit
+import Combine
 #elseif os(OSX)
 import AppKit
 #endif

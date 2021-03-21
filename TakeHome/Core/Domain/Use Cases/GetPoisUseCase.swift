@@ -14,6 +14,7 @@ struct Bounds {
     let p2Lat: Double
 }
 
+// sourcery: AutoMockable
 protocol GetPoisUseCase {
     func execute(bounds: Bounds) -> AnyPublisher<PoisDTO, Error>
 }
