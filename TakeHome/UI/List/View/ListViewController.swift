@@ -14,12 +14,6 @@ protocol ListView: BaseView {
 
 class ListViewController: BaseViewController, ListView {
 
-    enum Keys {
-        static let cellIdentifier = "ItemCellView"
-        static let estimatedRowHeight: CGFloat = 240
-        static let headerHeight: CGFloat = 60
-    }
-
     @IBOutlet weak private var tableView: UITableView!
     private let headerView = Bundle.main.loadNibNamed("ListViewHeader", owner: self, options: nil)?.first as? ListViewHeader
 
@@ -30,6 +24,12 @@ class ListViewController: BaseViewController, ListView {
     }
 
     var presenter: ListPresenter!
+
+    private enum Keys {
+        static let cellIdentifier = "ItemCellView"
+        static let estimatedRowHeight: CGFloat = 240
+        static let headerHeight: CGFloat = 60
+    }
 
     override func viewDidLoad() {
 
@@ -43,6 +43,9 @@ class ListViewController: BaseViewController, ListView {
 
     func update(items: [MapPoi]) {
         self.items = items
+        if items.isEmpty {
+            showInfoView(message: NSLocalizedString("noVehicles", comment: "No vechicles description"))
+        }
     }
 
     func update(location: String) {

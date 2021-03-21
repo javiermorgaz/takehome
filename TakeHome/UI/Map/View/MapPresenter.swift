@@ -21,7 +21,7 @@ protocol MapViewDelegate: class {
 
 final class MapPresenter: MapViewPresenter {
 
-    struct Keys {
+    private enum Keys {
         static let hamburgCoord1Lat: Double = 53.694865
         static let hamburgCoord1Long: Double = 9.757589
         static let hamburgCoord2Lat: Double = 53.394655

@@ -14,6 +14,12 @@ class ItemCellView: UITableViewCell {
     @IBOutlet private weak var vehicleImageView: UIImageView!
     @IBOutlet private weak var statusImageView: UIImageView!
 
+    private enum Keys {
+        static let vehicleLabelFontSize: CGFloat = 18
+        static let idLabelFontSize: CGFloat = 16
+        static let selectedColorAlpha: CGFloat = 0.5
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
@@ -38,11 +44,11 @@ class ItemCellView: UITableViewCell {
 
         vehicleImageView.image = UIImage(systemName: "car")
         vehicleImageView.tintColor = UIColor.primary
-        vehicleLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        vehicleLabel.font = .systemFont(ofSize: Keys.vehicleLabelFontSize, weight: .bold)
         vehicleLabel.textColor = UIColor.onBackground
-        idLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        idLabel.font = .systemFont(ofSize: Keys.idLabelFontSize, weight: .regular)
         idLabel.textColor = UIColor.onBackground
         let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor.primary?.withAlphaComponent(0.5)
+        backgroundView.backgroundColor = UIColor.primary?.withAlphaComponent(Keys.selectedColorAlpha)
         selectedBackgroundView = backgroundView
     }}

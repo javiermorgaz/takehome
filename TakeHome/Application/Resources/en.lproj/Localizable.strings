@@ -9,3 +9,4 @@
 "takeHome" = "Take Home";
 "vehicles" = "Vehicles";
 "locationTitle" = "Vehicles near the selected area in";
+"noVehicles" = "There are no available vehicles in this area";
