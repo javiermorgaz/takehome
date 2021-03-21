@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import MapKit
 
 protocol MapRoutable {
-    func showList()
+    func showList(_ items: [MapPoi], location: CLLocationCoordinate2D?, delegate: MapViewDelegate)
+    func dismiss()
 }
 
 class MapRouter: MapRoutable {
@@ -19,10 +21,17 @@ class MapRouter: MapRoutable {
         self.rootViewController = rootViewController
     }
 
-    func showList() {
+    func showList(_ items: [MapPoi], location: CLLocationCoordinate2D?, delegate: MapViewDelegate) {
+
         guard let rootViewController = rootViewController else { return }
 
-        let viewController = UIDependencies.shared.list.provideListView() // UIKit
+        let viewController = UINavigationController(rootViewController: UIDependencies.shared.list.provideListView(pois: items, location: location, delegate: delegate))
         rootViewController.present(viewController, animated: true, completion: nil)
+    }
+
+    func dismiss() {
+
+        guard let rootViewController = rootViewController else { return }
+        rootViewController.dismiss(animated: true, completion: nil)
     }
 }

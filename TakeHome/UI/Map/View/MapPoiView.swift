@@ -11,8 +11,8 @@ class MapPoiView: MKMarkerAnnotationView {
 
     override var annotation: MKAnnotation? {
         willSet {
-            guard let mapPoi = newValue as? MapPoi else { return }
-            markerTintColor = mapPoi.color
+            guard let mapAnnotation = newValue as? MapAnnotation else { return }
+            markerTintColor = mapAnnotation.color
             glyphImage = UIImage(systemName: "car.circle")
         }
     }

@@ -5,7 +5,6 @@
 //  Created by Jmorgaz on 18/3/21.
 //
 
-import Foundation
 import Combine
 import MapKit
 
@@ -13,6 +12,11 @@ protocol MapViewPresenter {
     func viewDidLoad()
     func didTapListButton()
     func mapRegionDidChange(_ bounds: MapBounds)
+}
+
+protocol MapViewDelegate: class {
+    func didTapItem(index: Int)
+    func didTapDoneButton()
 }
 
 final class MapPresenter: MapViewPresenter {
@@ -29,7 +33,8 @@ final class MapPresenter: MapViewPresenter {
 
     private var cancellable = Set<AnyCancellable>()
     private weak var view: MapView?
-    private var mapPois = [MapPoi]()
+    private var pois = [MapPoi]()
+    private var location: CLLocationCoordinate2D?
 
     init(view: MapView,
          getPoisUseCase: GetPoisUseCase,
@@ -46,7 +51,7 @@ final class MapPresenter: MapViewPresenter {
     }
 
     func didTapListButton() {
-        router.showList()
+        router.showList(pois, location: location, delegate: self)
     }
 
     func mapRegionDidChange(_ bounds: MapBounds) {
@@ -64,9 +69,11 @@ final class MapPresenter: MapViewPresenter {
         getPois(mapBounds)
     }
 
-    private func getPois(_ bounds: MapBounds) {
+    private func getPois(_ mapBounds: MapBounds) {
 
-        let bounds = Bounds(p1Lon: bounds.coordinate1.longitude, p1Lat: bounds.coordinate1.latitude, p2Lon: bounds.coordinate2.longitude, p2Lat: bounds.coordinate2.latitude)
+        let bounds = Bounds(p1Lon: mapBounds.coordinate1.longitude, p1Lat: mapBounds.coordinate1.latitude, p2Lon: mapBounds.coordinate2.longitude, p2Lat: mapBounds.coordinate2.latitude)
+
+        location = mapBounds.center
 
         getPoisUseCase.execute(bounds: bounds)
             .receive(on: DispatchQueue.main)
@@ -79,17 +86,25 @@ final class MapPresenter: MapViewPresenter {
                     break
                 }
             }, receiveValue: { [weak self] poiList in
-                self?.mapPois = poiList.map {
-                    MapPoi(title: String($0.id),
-                           state: $0.state,
-                           coordinate: CLLocationCoordinate2D(latitude: $0.coordinate.latitude,
-                                                              longitude: $0.coordinate.longitude)) }
+                self?.pois = poiList.map { MapPoi(poi: $0) }
                 self?.updatePois()
             })
             .store(in: &cancellable)
     }
 
     private func updatePois() {
-        view?.update(pois: mapPois)
+        view?.update(pois: pois)
+    }
+}
+
+extension MapPresenter: MapViewDelegate {
+
+    func didTapItem(index: Int) {
+        view?.select(poi: pois[index])
+        router.dismiss()
+    }
+
+    func didTapDoneButton() {
+        router.dismiss()
     }
 }

@@ -7,5 +7,5 @@
 */
 
 "takeHome" = "Take Home";
-"taxis" = "Taxis";
-"close" = "Close";
+"vehicles" = "Vehicles";
+"locationTitle" = "Vehicles near the selected area in";
