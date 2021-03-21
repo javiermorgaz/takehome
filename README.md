@@ -1,7 +1,4 @@
-# takehome
-
-
-# Real State challenge
+# Take Home
 
 Take Home iOS Challenge
 
