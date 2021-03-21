@@ -7,6 +7,7 @@
 
 import MapKit
 
+// sourcery: AutoMockable
 protocol ListViewPresenter {
     func viewDidLoad()
     func didTapItem(index: Int)

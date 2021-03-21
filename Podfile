@@ -9,6 +9,7 @@ end
 
 def common_pods
     pod 'SwiftLint', '~> 0.43.1'
+    pod 'Sourcery', '~> 1.3.4'
 end
 
 target 'TakeHome' do

@@ -44,6 +44,7 @@
 		1E6EFCC02605088C002F700A /* ItemCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E6EFCBF2605088C002F700A /* ItemCellView.xib */; };
 		1E9BBB892605E37F0037336A /* ListViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BBB882605E37F0037336A /* ListViewHeader.swift */; };
 		1E9BBB8E2605E8920037336A /* ListViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9BBB8D2605E8920037336A /* ListViewHeader.xib */; };
+		1E9BBD3726073F5B0037336A /* Protocol.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BBD3626073F5B0037336A /* Protocol.generated.swift */; };
 		4F64796E566D05B5E27B5BF2 /* Pods_TakeHome_TakeHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C77AA20772996228285346 /* Pods_TakeHome_TakeHomeUITests.framework */; };
 		A2F770DBE47A8FA5A028CABA /* Pods_TakeHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AF187C469A81775179A399 /* Pods_TakeHome.framework */; };
 		FDBCF8207CAF74C53D09B842 /* Pods_TakeHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B885242F22C6BCEE1DB913 /* Pods_TakeHomeTests.framework */; };
@@ -111,6 +112,7 @@
 		1E6EFCBF2605088C002F700A /* ItemCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCellView.xib; sourceTree = "<group>"; };
 		1E9BBB882605E37F0037336A /* ListViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewHeader.swift; sourceTree = "<group>"; };
 		1E9BBB8D2605E8920037336A /* ListViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewHeader.xib; sourceTree = "<group>"; };
+		1E9BBD3626073F5B0037336A /* Protocol.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.generated.swift; sourceTree = "<group>"; };
 		1FBEC57366626ED9463A755F /* Pods-TakeHome-TakeHomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeHome-TakeHomeUITests.debug.xcconfig"; path = "Target Support Files/Pods-TakeHome-TakeHomeUITests/Pods-TakeHome-TakeHomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		21AF187C469A81775179A399 /* Pods_TakeHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B885242F22C6BCEE1DB913 /* Pods_TakeHomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeHomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +196,7 @@
 		1E6EF7E72601D4A3002F700A /* TakeHomeTests */ = {
 			isa = PBXGroup;
 			children = (
+				1E9BBD3226073EF00037336A /* Resources */,
 				1E6EF7E82601D4A3002F700A /* TakeHomeTests.swift */,
 				1E6EF7EA2601D4A3002F700A /* Info.plist */,
 			);
@@ -426,6 +429,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		1E9BBD3226073EF00037336A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1E9BBD3626073F5B0037336A /* Protocol.generated.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B925BC7EAB298622E50BD083 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,7 +461,8 @@
 				1E6EF7CA2601D4A2002F700A /* Sources */,
 				1E6EF7CB2601D4A2002F700A /* Frameworks */,
 				1E6EF7CC2601D4A2002F700A /* Resources */,
-				1E6EF97326025E09002F700A /* ShellScript */,
+				1E6EF97326025E09002F700A /* SwiftLint */,
+				1E9BBD012607368E0037336A /* Sourcery */,
 			);
 			buildRules = (
 			);
@@ -576,7 +588,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E6EF97326025E09002F700A /* ShellScript */ = {
+		1E6EF97326025E09002F700A /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -585,13 +597,32 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		1E9BBD012607368E0037336A /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/Sourcery/bin/sourcery\n";
 		};
 		437467D166B2F999F1A90983 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -734,6 +765,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E9BBD3726073F5B0037336A /* Protocol.generated.swift in Sources */,
 				1E6EF7E92601D4A3002F700A /* TakeHomeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

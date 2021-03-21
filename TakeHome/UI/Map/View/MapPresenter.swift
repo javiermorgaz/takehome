@@ -8,6 +8,7 @@
 import Combine
 import MapKit
 
+// sourcery: AutoMockable
 protocol MapViewPresenter {
     func viewDidLoad()
     func didTapListButton()
