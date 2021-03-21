@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -46,6 +47,13 @@
                             <constraint firstAttribute="width" constant="30" id="tgC-Lk-qbG"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8q-BO-m7y">
+                        <rect key="frame" x="16" y="94" width="458" height="1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="LR2-WW-XUr"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ry1-S4-ohF" firstAttribute="centerY" secondItem="Oso-mH-3RM" secondAttribute="centerY" id="0HG-jS-8Z0"/>
@@ -53,13 +61,17 @@
                     <constraint firstAttribute="trailing" secondItem="ep1-fV-rbh" secondAttribute="trailing" constant="16" id="MsA-uo-hh8"/>
                     <constraint firstItem="ep1-fV-rbh" firstAttribute="leading" secondItem="lYm-2g-b22" secondAttribute="trailing" constant="32" id="XQZ-0h-n92"/>
                     <constraint firstItem="lYm-2g-b22" firstAttribute="top" secondItem="Oso-mH-3RM" secondAttribute="top" constant="8" id="YFv-GD-yg2"/>
+                    <constraint firstAttribute="bottom" secondItem="H8q-BO-m7y" secondAttribute="bottom" id="aUE-WU-2hK"/>
+                    <constraint firstAttribute="trailing" secondItem="H8q-BO-m7y" secondAttribute="trailing" id="lKS-lu-P2q"/>
                     <constraint firstItem="lYm-2g-b22" firstAttribute="leading" secondItem="ry1-S4-ohF" secondAttribute="trailing" constant="32" id="oEw-AR-1JW"/>
                     <constraint firstItem="ep1-fV-rbh" firstAttribute="centerY" secondItem="Oso-mH-3RM" secondAttribute="centerY" id="oxa-PV-7Xb"/>
                     <constraint firstAttribute="bottom" secondItem="lYm-2g-b22" secondAttribute="bottom" constant="8" id="qkg-0B-jmK"/>
+                    <constraint firstItem="H8q-BO-m7y" firstAttribute="leading" secondItem="Oso-mH-3RM" secondAttribute="leading" constant="16" id="yhk-Ap-iV7"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="idLabel" destination="B13-PV-NEj" id="SvZ-m2-38y"/>
+                <outlet property="separatorView" destination="H8q-BO-m7y" id="Z0G-ym-hdf"/>
                 <outlet property="statusImageView" destination="ep1-fV-rbh" id="0Sm-y1-AXR"/>
                 <outlet property="vehicleImageView" destination="ry1-S4-ohF" id="VjC-Ql-b2d"/>
                 <outlet property="vehicleLabel" destination="aID-yF-Wi9" id="s9a-7q-pet"/>
@@ -67,4 +79,9 @@
             <point key="canvasLocation" x="-169.56521739130437" y="70.647321428571431"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -22,7 +22,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func setupNavigationBarApparence() {
-        UINavigationBar.appearance().barTintColor = UIColor.primary
+
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor.primary
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.onPrimary!]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.onPrimary!]
+
         UINavigationBar.appearance().tintColor = UIColor.onPrimary
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 }
