@@ -1,0 +1,5 @@
+sources:
+    - TakeHome
+templates:
+    - Templates
+output: TakeHomeTests/Resources/Protocol.generated.swift
